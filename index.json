@@ -1,5 +1,6 @@
 { 
     "schemas": [
+        "./AANZFTA_COO/v1.0/schema.json",
         "./EmailCredentialSchema/v1.0/schema.json",
         "./PhoneCredentialSchema/v1.0/schema.json",
         "./ProfileCredentialSchema/v1.0/schema.json",
