@@ -1,258 +1,266 @@
 {
-  "type": "object",
-  "properties": {
-    "iD": { "type": "string", "title": "Certificate Number" },
-    "issueDateTime": {
-      "type": "string",
-      "format": "date-time",
-      "label": "Issue Date and Time"
-    },
-    "firstSignatoryAuthentication": {
-      "type": "object",
-      "properties": {
-        "signature": { "type": "string" },
-        "actualDateTime": {
-          "type": "string",
-          "format": "date-time",
-          "label": "Actual Date and Time"
-        }
+  "type": "https://w3c-ccg.github.io/vc-json-schemas/schema/1.0/schema.json",
+  "modelVersion": "1.0",
+  "id": "did:ethr:rsk:0x8a32da624dd9fad8bf4f32d9456f374b60d9ad28;id=1eb2af6b-0dee-6090-cb55-0ed093f9b026;version=1.0",
+  "name": "AANZFTA Certificate of Origin",
+  "author": "did:ethr:rsk:0x8a32da624dd9fad8bf4f32d9456f374b60d9ad28",
+  "authored": "2020-11-20T03:22:00-03:00",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "iD": { "type": "string", "title": "Certificate Number" },
+      "issueDateTime": {
+        "type": "string",
+        "format": "date-time",
+        "label": "Issue Date and Time"
       },
-      "required": ["signature"]
-    },
-    "secondSignatoryAuthentication": {
-      "type": "object",
-      "properties": {
-        "signature": { "type": "string" },
-        "actualDateTime": {
-          "type": "string",
-          "format": "date-time",
-          "label": "Actual Date and Time"
-        }
+      "firstSignatoryAuthentication": {
+        "type": "object",
+        "properties": {
+          "signature": { "type": "string" },
+          "actualDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "label": "Actual Date and Time"
+          }
+        },
+        "required": ["signature"]
       },
-      "required": ["signature"]
-    },
-    "isPreferential": {
-      "type": "boolean",
-      "title": "Preferential Treatment Given Under AANZFTA"
-    },
-    "supplyChainConsignment": {
-      "type": "object",
-      "properties": {
-        "iD": { "type": "string", "title": "Id" },
-        "information": { "type": "string" },
-        "exportCountry": {
-          "type": "object",
-          "properties": { "name": { "type": "string" } },
-          "required": ["name"]
+      "secondSignatoryAuthentication": {
+        "type": "object",
+        "properties": {
+          "signature": { "type": "string" },
+          "actualDateTime": {
+            "type": "string",
+            "format": "date-time",
+            "label": "Actual Date and Time"
+          }
         },
-        "importCountry": {
-          "type": "object",
-          "properties": { "name": { "type": "string" } },
-          "required": ["name"]
-        },
-        "consignor": {
-          "type": "object",
-          "properties": {
-            "iD": { "type": "string", "title": "ABN" },
-            "name": { "type": "string" },
-            "postalAddress": {
-              "type": "object",
-              "properties": {
-                "line1": { "type": "string" },
-                "line2": { "type": "string" },
-                "cityName": { "type": "string" },
-                "postcode": { "type": "string" },
-                "countrySubDivisionName": { "type": "string" },
-                "countryCode": { "type": "string" }
-              },
-              "required": ["line1", "cityName", "postcode", "countryCode"]
-            }
+        "required": ["signature"]
+      },
+      "isPreferential": {
+        "type": "boolean",
+        "title": "Preferential Treatment Given Under AANZFTA"
+      },
+      "supplyChainConsignment": {
+        "type": "object",
+        "properties": {
+          "iD": { "type": "string", "title": "Id" },
+          "information": { "type": "string" },
+          "exportCountry": {
+            "type": "object",
+            "properties": { "name": { "type": "string" } },
+            "required": ["name"]
           },
-          "required": ["iD", "name", "postalAddress"]
-        },
-        "consignee": {
-          "type": "object",
-          "properties": {
-            "iD": { "type": "string", "title": "ABN" },
-            "name": { "type": "string" },
-            "postalAddress": {
-              "type": "object",
-              "properties": {
-                "line1": { "type": "string" },
-                "line2": { "type": "string" },
-                "cityName": { "type": "string" },
-                "postcode": { "type": "string" },
-                "countrySubDivisionName": { "type": "string" },
-                "countryCode": { "type": "string" }
-              },
-              "required": ["line1", "cityName", "postcode", "countryCode"]
-            }
+          "importCountry": {
+            "type": "object",
+            "properties": { "name": { "type": "string" } },
+            "required": ["name"]
           },
-          "required": ["iD", "name", "postalAddress"]
-        },
-        "loadingBaseportLocation": {
-          "type": "object",
-          "properties": {
-            "iD": { "type": "string", "title": "Port of Discharge" },
-            "name": { "type": "string" }
-          },
-          "required": ["name"]
-        },
-        "mainCarriageTransportMovement": {
-          "type": "object",
-          "properties": {
-            "iD": { "type": "string", "title": "Id" },
-            "information": { "type": "string" },
-            "usedTransportMeans": {
-              "type": "object",
-              "properties": {
-                "iD": { "type": "string", "title": "Vessel / Aircraft Number" },
-                "name": { "type": "string" }
-              },
-              "required": ["iD"]
+          "consignor": {
+            "type": "object",
+            "properties": {
+              "iD": { "type": "string", "title": "ABN" },
+              "name": { "type": "string" },
+              "postalAddress": {
+                "type": "object",
+                "properties": {
+                  "line1": { "type": "string" },
+                  "line2": { "type": "string" },
+                  "cityName": { "type": "string" },
+                  "postcode": { "type": "string" },
+                  "countrySubDivisionName": { "type": "string" },
+                  "countryCode": { "type": "string" }
+                },
+                "required": ["line1", "cityName", "postcode", "countryCode"]
+              }
             },
-            "departureEvent": {
-              "type": "object",
-              "properties": {
-                "departureDateTime": {
-                  "type": "string",
-                  "title": "Shipment Date and Time",
-                  "format": "date-time"
-                }
-              },
-              "required": ["departureDateTime"]
-            }
+            "required": ["iD", "name", "postalAddress"]
           },
-          "required": ["usedTransportMeans", "departureEvent"]
-        },
-        "unloadingBaseportLocation": {
-          "type": "object",
-          "properties": {
-            "iD": { "type": "string", "title": "Id" },
-            "name": { "type": "string" }
+          "consignee": {
+            "type": "object",
+            "properties": {
+              "iD": { "type": "string", "title": "ABN" },
+              "name": { "type": "string" },
+              "postalAddress": {
+                "type": "object",
+                "properties": {
+                  "line1": { "type": "string" },
+                  "line2": { "type": "string" },
+                  "cityName": { "type": "string" },
+                  "postcode": { "type": "string" },
+                  "countrySubDivisionName": { "type": "string" },
+                  "countryCode": { "type": "string" }
+                },
+                "required": ["line1", "cityName", "postcode", "countryCode"]
+              }
+            },
+            "required": ["iD", "name", "postalAddress"]
           },
-          "required": ["iD"]
-        },
-        "includedConsignmentItems": {
-          "type": "array",
-          "items": {
+          "loadingBaseportLocation": {
+            "type": "object",
+            "properties": {
+              "iD": { "type": "string", "title": "Port of Discharge" },
+              "name": { "type": "string" }
+            },
+            "required": ["name"]
+          },
+          "mainCarriageTransportMovement": {
             "type": "object",
             "properties": {
               "iD": { "type": "string", "title": "Id" },
               "information": { "type": "string" },
-              "crossBorderRegulatoryProcedure": {
+              "usedTransportMeans": {
                 "type": "object",
                 "properties": {
-                  "originCriteriaText": { "type": "string", "title": "Origin" }
+                  "iD": { "type": "string", "title": "Vessel / Aircraft Number" },
+                  "name": { "type": "string" }
                 },
-                "required": ["originCriteriaText"]
+                "required": ["iD"]
               },
-              "manufacturer": {
+              "departureEvent": {
                 "type": "object",
                 "properties": {
-                  "iD": { "type": "string", "title": "Id" },
-                  "name": { "type": "string" },
-                  "postalAddress": {
-                    "type": "object",
-                    "properties": {
-                      "line1": { "type": "string" },
-                      "line2": { "type": "string" },
-                      "cityName": { "type": "string" },
-                      "postcode": { "type": "string" },
-                      "countrySubDivisionName": { "type": "string" },
-                      "countryCode": { "type": "string" }
-                    }
+                  "departureDateTime": {
+                    "type": "string",
+                    "title": "Shipment Date and Time",
+                    "format": "date-time"
                   }
-                }
-              },
-              "tradeLineItems": {
-                "type": "array",
-                "items": {
+                },
+                "required": ["departureDateTime"]
+              }
+            },
+            "required": ["usedTransportMeans", "departureEvent"]
+          },
+          "unloadingBaseportLocation": {
+            "type": "object",
+            "properties": {
+              "iD": { "type": "string", "title": "Id" },
+              "name": { "type": "string" }
+            },
+            "required": ["iD"]
+          },
+          "includedConsignmentItems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "iD": { "type": "string", "title": "Id" },
+                "information": { "type": "string" },
+                "crossBorderRegulatoryProcedure": {
                   "type": "object",
                   "properties": {
-                    "sequenceNumber": { "type": "number" },
-                    "invoiceReference": {
+                    "originCriteriaText": { "type": "string", "title": "Origin" }
+                  },
+                  "required": ["originCriteriaText"]
+                },
+                "manufacturer": {
+                  "type": "object",
+                  "properties": {
+                    "iD": { "type": "string", "title": "Id" },
+                    "name": { "type": "string" },
+                    "postalAddress": {
                       "type": "object",
                       "properties": {
-                        "iD": { "type": "string", "title": "Invoice Number" },
-                        "issueDateTime": {
-                          "type": "string",
-                          "format": "date-time",
-                          "title": "Invoice Date and Time"
-                        },
-                        "attachedBinaryFile": {
-                          "type": "object",
-                          "properties": {
-                            "uRI": { "type": "string", "title": "URI" }
+                        "line1": { "type": "string" },
+                        "line2": { "type": "string" },
+                        "cityName": { "type": "string" },
+                        "postcode": { "type": "string" },
+                        "countrySubDivisionName": { "type": "string" },
+                        "countryCode": { "type": "string" }
+                      }
+                    }
+                  }
+                },
+                "tradeLineItems": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sequenceNumber": { "type": "number" },
+                      "invoiceReference": {
+                        "type": "object",
+                        "properties": {
+                          "iD": { "type": "string", "title": "Invoice Number" },
+                          "issueDateTime": {
+                            "type": "string",
+                            "format": "date-time",
+                            "title": "Invoice Date and Time"
+                          },
+                          "attachedBinaryFile": {
+                            "type": "object",
+                            "properties": {
+                              "uRI": { "type": "string", "title": "URI" }
+                            }
                           }
-                        }
-                      },
-                      "required": ["issueDateTime", "iD"]
-                    },
-                    "tradeProduct": {
-                      "type": "object",
-                      "properties": {
-                        "iD": { "type": "string", "title": "Id" },
-                        "description": { "type": "string" },
-                        "harmonisedTariffCode": {
-                          "type": "object",
-                          "properties": {
-                            "classCode": { "type": "string" },
-                            "className": { "type": "string" }
-                          }
                         },
-                        "originCountry": {
-                          "type": "object",
-                          "properties": { "code": { "type": "string" } }
-                        }
+                        "required": ["issueDateTime", "iD"]
                       },
-                      "required": ["description"]
-                    },
-                    "transportPackages": {
-                      "type": "array",
-                      "items": {
+                      "tradeProduct": {
                         "type": "object",
                         "properties": {
                           "iD": { "type": "string", "title": "Id" },
-                          "grossVolume": {
-                            "type": "string",
-                            "title": "Gross Volume"
+                          "description": { "type": "string" },
+                          "harmonisedTariffCode": {
+                            "type": "object",
+                            "properties": {
+                              "classCode": { "type": "string" },
+                              "className": { "type": "string" }
+                            }
                           },
-                          "grossWeight": {
-                            "type": "string",
-                            "title": "Gross Weight"
+                          "originCountry": {
+                            "type": "object",
+                            "properties": { "code": { "type": "string" } }
                           }
                         },
-                        "required": ["iD", "grossVolume", "grossWeight"]
+                        "required": ["description"]
+                      },
+                      "transportPackages": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "iD": { "type": "string", "title": "Id" },
+                            "grossVolume": {
+                              "type": "string",
+                              "title": "Gross Volume"
+                            },
+                            "grossWeight": {
+                              "type": "string",
+                              "title": "Gross Weight"
+                            }
+                          },
+                          "required": ["iD", "grossVolume", "grossWeight"]
+                        }
                       }
-                    }
-                  },
-                  "required": [
-                    "sequenceNumber",
-                    "invoiceReference",
-                    "tradeProduct",
-                    "transportPackages"
-                  ]
+                    },
+                    "required": [
+                      "sequenceNumber",
+                      "invoiceReference",
+                      "tradeProduct",
+                      "transportPackages"
+                    ]
+                  }
                 }
-              }
-            },
-            "required": ["crossBorderRegulatoryProcedure"]
+              },
+              "required": ["crossBorderRegulatoryProcedure"]
+            }
           }
-        }
-      },
-      "required": [
-        "mainCarriageTransportMovement",
-        "consignee",
-        "importCountry",
-        "exportCountry",
-        "consignor",
-        "unloadingBaseportLocation"
-      ]
-    }
-  },
-  "required": [
-    "supplyChainConsignment",
-    "firstSignatoryAuthentication",
-    "secondSignatoryAuthentication"
-  ]
+        },
+        "required": [
+          "mainCarriageTransportMovement",
+          "consignee",
+          "importCountry",
+          "exportCountry",
+          "consignor",
+          "unloadingBaseportLocation"
+        ]
+      }
+    },
+    "required": [
+      "supplyChainConsignment",
+      "firstSignatoryAuthentication",
+      "secondSignatoryAuthentication"
+    ]
+  }
 }
