@@ -6,6 +6,7 @@
   "author": "did:ethr:rsk:0x8a32da624dd9fad8bf4f32d9456f374b60d9ad28",
   "authored": "2020-11-20T03:22:00-03:00",
   "schema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
       "iD": { "type": "string", "title": "Certificate Number" },
