@@ -732,52 +732,58 @@
                     "label": "Name"
                   }
                 ]
-              },
-              {
-                "type": "Control",
-                "scope": "#/properties/supplyChainConsignment/properties/includedConsignmentItems",
-                "options": {
-                  "detail": {
-                    "type": "VerticalLayout",
-                    "elements": [
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/iD"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/information"
-                      },
-                      {
-                        "type": "Label",
-                        "text": "Cross Border Regulatory Procedure"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/crossBorderRegulatoryProcedure/properties/originCriteriaText",
-                        "label": "Origin"
-                      },
-                      {
-                        "type": "Label",
-                        "text": "Manufacturer"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/manufacturer/properties/iD"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/manufacturer/properties/name"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/manufacturer/properties/postalAddress"
-                      }
-                    ]
-                  }
-                }
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "Category",
+        "label": "Consignment Details",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/supplyChainConsignment/properties/includedConsignmentItems",
+            "options": {
+              "detail": {
+                "type": "VerticalLayout",
+                "elements": [
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/iD"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/information"
+                  },
+                  {
+                    "type": "Label",
+                    "text": "Cross Border Regulatory Procedure"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/crossBorderRegulatoryProcedure/properties/originCriteriaText",
+                    "label": "Origin"
+                  },
+                  {
+                    "type": "Label",
+                    "text": "Manufacturer"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/manufacturer/properties/iD"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/manufacturer/properties/name"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/manufacturer/properties/postalAddress"
+                  }
+                ]
+              }
+            }
           }
         ]
       }
