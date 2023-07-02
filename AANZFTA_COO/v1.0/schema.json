@@ -443,11 +443,20 @@
       {
         "type": "HorizontalLayout",
         "elements": [
-          { "type": "Control", "scope": "#/properties/iD" },
-          { "type": "Control", "scope": "#/properties/issueDateTime" }
+          {
+            "type": "Control",
+            "scope": "#/properties/iD"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/issueDateTime"
+          }
         ]
       },
-      { "type": "Control", "scope": "#/properties/isPreferential" },
+      {
+        "type": "Control",
+        "scope": "#/properties/isPreferential"
+      },
       {
         "type": "Group",
         "label": "First Signatory Authentication",
@@ -539,7 +548,10 @@
                   }
                 ]
               },
-              { "type": "Label", "text": "Postal Address" },
+              {
+                "type": "Label",
+                "text": "Postal Address"
+              },
               {
                 "type": "Control",
                 "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/line1",
@@ -599,7 +611,10 @@
                   }
                 ]
               },
-              { "type": "Label", "text": "Postal Address" },
+              {
+                "type": "Label",
+                "text": "Postal Address"
+              },
               {
                 "type": "Control",
                 "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/line1",
@@ -672,7 +687,10 @@
                 "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/departureEvent/properties/departureDateTime",
                 "label": "Departure Date Time"
               },
-              { "type": "Label", "text": "Used Transport Means" },
+              {
+                "type": "Label",
+                "text": "Used Transport Means"
+              },
               {
                 "type": "Control",
                 "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/usedTransportMeans/properties/iD",
@@ -707,8 +725,14 @@
               "detail": {
                 "type": "VerticalLayout",
                 "elements": [
-                  { "type": "Control", "scope": "#/properties/iD" },
-                  { "type": "Control", "scope": "#/properties/information" },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/iD"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/information"
+                  },
                   {
                     "type": "Label",
                     "text": "Cross Border Regulatory Procedure"
@@ -718,7 +742,10 @@
                     "scope": "#/properties/crossBorderRegulatoryProcedure/properties/originCriteriaText",
                     "label": "Origin"
                   },
-                  { "type": "Label", "text": "Manufacturer" },
+                  {
+                    "type": "Label",
+                    "text": "Manufacturer"
+                  },
                   {
                     "type": "Control",
                     "scope": "#/properties/manufacturer/properties/iD"
@@ -822,5 +849,28 @@
         ]
       }
     ]
-  }  
+  },
+  "issuerMetadata": {
+    "version": "https://schema.openattestation.com/3.0/schema.json",
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1"
+    ],
+    "openAttestationMetadata": {
+      "template": {
+        "type": "EMBEDDED_RENDERER",
+        "name": "AANZFTA-COO",
+        "url": "https://gregarious-conkies-7f39e8.netlify.app/"
+      },
+      "proof": {
+        "type": "OpenAttestationProofMethod",
+        "method": "DID",
+        "revocation": {
+          "type": "NONE"
+        }
+      },
+      "identityProof": {
+        "type": "DID"
+      }
+    }
+  }
 }
