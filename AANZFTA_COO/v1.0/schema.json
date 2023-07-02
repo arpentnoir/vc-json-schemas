@@ -438,50 +438,143 @@
     ]
   },
   "uiSchema": {
-    "type": "Categorization",
+    "type": "VerticalLayout",
     "elements": [
       {
-        "type": "Category",
-        "label": "Certificate Details",
+        "type": "HorizontalLayout",
+        "elements": [
+          { "type": "Control", "scope": "#/properties/iD" },
+          { "type": "Control", "scope": "#/properties/issueDateTime" }
+        ]
+      },
+      { "type": "Control", "scope": "#/properties/isPreferential" },
+      {
+        "type": "Group",
+        "label": "First Signatory Authentication",
         "elements": [
           {
             "type": "HorizontalLayout",
             "elements": [
               {
                 "type": "Control",
-                "scope": "#/properties/iD"
+                "scope": "#/properties/firstSignatoryAuthentication/properties/signature",
+                "label": "Signature"
               },
               {
                 "type": "Control",
-                "scope": "#/properties/issueDateTime"
+                "scope": "#/properties/firstSignatoryAuthentication/properties/actualDateTime"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Second Signatory Authentication",
+        "elements": [
+          {
+            "type": "HorizontalLayout",
+            "elements": [
+              {
+                "type": "Control",
+                "scope": "#/properties/secondSignatoryAuthentication/properties/signature",
+                "label": "Signature"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/secondSignatoryAuthentication/properties/actualDateTime"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Supply Chain Consignment",
+        "elements": [
+          {
+            "type": "HorizontalLayout",
+            "elements": [
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/iD"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/information"
               }
             ]
           },
           {
-            "type": "Control",
-            "scope": "#/properties/isPreferential"
-          }
-        ]
-      },
-      {
-        "type": "Category",
-        "label": "Signatory Details",
-        "elements": [
+            "type": "HorizontalLayout",
+            "elements": [
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/exportCountry/properties/name",
+                "label": "Export Country Name"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/importCountry/properties/name",
+                "label": "Import Country Name"
+              }
+            ]
+          },
           {
             "type": "Group",
-            "label": "First Signatory Authentication",
+            "label": "Consignor",
             "elements": [
               {
                 "type": "HorizontalLayout",
                 "elements": [
                   {
                     "type": "Control",
-                    "scope": "#/properties/firstSignatoryAuthentication/properties/signature",
-                    "label": "Signature"
+                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/iD",
+                    "label": "ABN"
                   },
                   {
                     "type": "Control",
-                    "scope": "#/properties/firstSignatoryAuthentication/properties/actualDateTime"
+                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/name",
+                    "label": "Name"
+                  }
+                ]
+              },
+              { "type": "Label", "text": "Postal Address" },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/line1",
+                "label": "Line 1"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/line2"
+              },
+              {
+                "type": "HorizontalLayout",
+                "elements": [
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/cityName",
+                    "label": "City Name"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/postcode",
+                    "label": "Post Code"
+                  }
+                ]
+              },
+              {
+                "type": "HorizontalLayout",
+                "elements": [
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/countrySubDivisionName"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/countryCode",
+                    "label": "Country Code"
                   }
                 ]
               }
@@ -489,258 +582,124 @@
           },
           {
             "type": "Group",
-            "label": "Second Signatory Authentication",
+            "label": "Consignee",
             "elements": [
               {
                 "type": "HorizontalLayout",
                 "elements": [
                   {
                     "type": "Control",
-                    "scope": "#/properties/secondSignatoryAuthentication/properties/signature",
-                    "label": "Signature"
+                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/iD",
+                    "label": "ABN"
                   },
                   {
                     "type": "Control",
-                    "scope": "#/properties/secondSignatoryAuthentication/properties/actualDateTime"
+                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/name",
+                    "label": "Name"
+                  }
+                ]
+              },
+              { "type": "Label", "text": "Postal Address" },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/line1",
+                "label": "Line 1"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/line2"
+              },
+              {
+                "type": "HorizontalLayout",
+                "elements": [
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/cityName",
+                    "label": "City Name"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/postcode",
+                    "label": "Post Code"
+                  }
+                ]
+              },
+              {
+                "type": "HorizontalLayout",
+                "elements": [
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/countrySubDivisionName"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/countryCode",
+                    "label": "Country Code"
                   }
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "Category",
-        "label": "Consignment Details",
-        "elements": [
+          },
           {
             "type": "Group",
+            "label": "Loading Baseport Location",
             "elements": [
               {
-                "type": "HorizontalLayout",
-                "elements": [
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/iD"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/information"
-                  }
-                ]
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/loadingBaseportLocation/properties/iD"
               },
               {
-                "type": "HorizontalLayout",
-                "elements": [
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/exportCountry/properties/name",
-                    "label": "Export Country Name"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/importCountry/properties/name",
-                    "label": "Import Country Name"
-                  }
-                ]
-              },
-              {
-                "type": "Group",
-                "label": "Consignor",
-                "elements": [
-                  {
-                    "type": "HorizontalLayout",
-                    "elements": [
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/iD",
-                        "label": "ABN"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/name",
-                        "label": "Name"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Label",
-                    "text": "Postal Address"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/line1",
-                    "label": "Line 1"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/line2"
-                  },
-                  {
-                    "type": "HorizontalLayout",
-                    "elements": [
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/cityName",
-                        "label": "City Name"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/postcode",
-                        "label": "Post Code"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "HorizontalLayout",
-                    "elements": [
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/countrySubDivisionName"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignor/properties/postalAddress/properties/countryCode",
-                        "label": "Country Code"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "Group",
-                "label": "Consignee",
-                "elements": [
-                  {
-                    "type": "HorizontalLayout",
-                    "elements": [
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/iD",
-                        "label": "ABN"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/name",
-                        "label": "Name"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "Label",
-                    "text": "Postal Address"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/line1",
-                    "label": "Line 1"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/line2"
-                  },
-                  {
-                    "type": "HorizontalLayout",
-                    "elements": [
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/cityName",
-                        "label": "City Name"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/postcode",
-                        "label": "Post Code"
-                      }
-                    ]
-                  },
-                  {
-                    "type": "HorizontalLayout",
-                    "elements": [
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/countrySubDivisionName"
-                      },
-                      {
-                        "type": "Control",
-                        "scope": "#/properties/supplyChainConsignment/properties/consignee/properties/postalAddress/properties/countryCode",
-                        "label": "Country Code"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "Group",
-                "label": "Loading Baseport Location",
-                "elements": [
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/loadingBaseportLocation/properties/iD"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/loadingBaseportLocation/properties/name",
-                    "label": "Name"
-                  }
-                ]
-              },
-              {
-                "type": "Group",
-                "label": "Main Carriage Transport Movement",
-                "elements": [
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/iD"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/information"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/departureEvent/properties/departureDateTime",
-                    "label": "Departure Date Time"
-                  },
-                  {
-                    "type": "Label",
-                    "text": "Used Transport Means"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/usedTransportMeans/properties/iD",
-                    "label": "Vessel / Aircraft Number"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/usedTransportMeans/properties/name"
-                  }
-                ]
-              },
-              {
-                "type": "Group",
-                "label": "Unloading Baseport Location",
-                "elements": [
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/unloadingBaseportLocation/properties/iD",
-                    "label": "Id"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/supplyChainConsignment/properties/unloadingBaseportLocation/properties/name",
-                    "label": "Name"
-                  }
-                ]
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/loadingBaseportLocation/properties/name",
+                "label": "Name"
               }
             ]
-          }
-        ]
-      },
-      {
-        "type": "Category",
-        "label": "Consignment Details",
-        "elements": [
+          },
+          {
+            "type": "Group",
+            "label": "Main Carriage Transport Movement",
+            "elements": [
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/iD"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/information"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/departureEvent/properties/departureDateTime",
+                "label": "Departure Date Time"
+              },
+              { "type": "Label", "text": "Used Transport Means" },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/usedTransportMeans/properties/iD",
+                "label": "Vessel / Aircraft Number"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/mainCarriageTransportMovement/properties/usedTransportMeans/properties/name"
+              }
+            ]
+          },
+          {
+            "type": "Group",
+            "label": "Unloading Baseport Location",
+            "elements": [
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/unloadingBaseportLocation/properties/iD",
+                "label": "Id"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/supplyChainConsignment/properties/unloadingBaseportLocation/properties/name",
+                "label": "Name"
+              }
+            ]
+          },
           {
             "type": "Control",
             "scope": "#/properties/supplyChainConsignment/properties/includedConsignmentItems",
@@ -748,14 +707,8 @@
               "detail": {
                 "type": "VerticalLayout",
                 "elements": [
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/iD"
-                  },
-                  {
-                    "type": "Control",
-                    "scope": "#/properties/information"
-                  },
+                  { "type": "Control", "scope": "#/properties/iD" },
+                  { "type": "Control", "scope": "#/properties/information" },
                   {
                     "type": "Label",
                     "text": "Cross Border Regulatory Procedure"
@@ -765,10 +718,7 @@
                     "scope": "#/properties/crossBorderRegulatoryProcedure/properties/originCriteriaText",
                     "label": "Origin"
                   },
-                  {
-                    "type": "Label",
-                    "text": "Manufacturer"
-                  },
+                  { "type": "Label", "text": "Manufacturer" },
                   {
                     "type": "Control",
                     "scope": "#/properties/manufacturer/properties/iD"
@@ -780,6 +730,90 @@
                   {
                     "type": "Control",
                     "scope": "#/properties/manufacturer/properties/postalAddress"
+                  },
+                  {
+                    "type": "Control",
+                    "scope": "#/properties/tradeLineItems",
+                    "options": {
+                      "detail": {
+                        "type": "VerticalLayout",
+                        "elements": [
+                          {
+                            "type": "Control",
+                            "scope": "#/properties/sequenceNumber",
+                            "label": "Sequence Number"
+                          },
+                          {
+                            "type": "Group",
+                            "scope": "#/properties/invoiceReference",
+                            "label": "Invoice Reference",
+                            "elements": [
+                              {
+                                "type": "Control",
+                                "scope": "#/properties/invoiceReference/properties/iD",
+                                "label": "Invoice Number"
+                              },
+                              {
+                                "type": "Control",
+                                "scope": "#/properties/invoiceReference/properties/issueDateTime",
+                                "label": "Issue Date Time"
+                              }
+                            ]
+                          },
+                          {
+                            "scope": "#/properties/tradeProduct",
+                            "type": "Group",
+                            "label": "Trade Product",
+                            "elements": [
+                              {
+                                "type": "Control",
+                                "scope": "#/properties/tradeProduct/properties/iD",
+                                "label": "Id"
+                              },
+                              {
+                                "type": "Control",
+                                "scope": "#/properties/tradeProduct/properties/description",
+                                "label": "Description"
+                              },
+                              {
+                                "type": "Control",
+                                "scope": "#/properties/tradeProduct/properties/harmonisedTariffCode"
+                              },
+                              {
+                                "type": "Control",
+                                "scope": "#/properties/tradeProduct/properties/originCountry"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Control",
+                            "scope": "#/properties/transportPackages",
+                            "options": {
+                              "detail": {
+                                "type": "HorizontalLayout",
+                                "elements": [
+                                  {
+                                    "type": "Control",
+                                    "scope": "#/properties/iD",
+                                    "label": "Id"
+                                  },
+                                  {
+                                    "type": "Control",
+                                    "scope": "#/properties/grossVolume",
+                                    "label": "Gross Volume"
+                                  },
+                                  {
+                                    "type": "Control",
+                                    "scope": "#/properties/grossWeight",
+                                    "label": "Gross Weight"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
                   }
                 ]
               }
@@ -788,5 +822,5 @@
         ]
       }
     ]
-  }
+  }  
 }
