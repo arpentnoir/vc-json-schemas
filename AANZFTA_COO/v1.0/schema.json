@@ -853,13 +853,15 @@
   "issuerMetadata": {
     "version": "https://schema.openattestation.com/3.0/schema.json",
     "@context": [
-      "https://www.w3.org/2018/credentials/v1"
+      "https://www.w3.org/2018/credentials/v1",
+      "https://arpentnoir.github.io/vc-json-schemas/schema/AANZFTA_COO/v1.0/context.json",
+      "https://schemata.openattestation.com/com/openattestation/1.0/OpenAttestation.v3.json"
     ],
     "openAttestationMetadata": {
       "template": {
         "type": "EMBEDDED_RENDERER",
-        "name": "AANZFTA-COO",
-        "url": "https://gregarious-conkies-7f39e8.netlify.app/"
+         "name": "AANZFTACoO",
+         "url": "https://renderer.dev.dvp.ha.showthething.com"
       },
       "proof": {
         "type": "OpenAttestationProofMethod",
